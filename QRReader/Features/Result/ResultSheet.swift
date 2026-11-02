@@ -251,7 +251,7 @@ struct CNMutableContactBox {
 }
 
 /// "Just now", "5 min ago", "3 h ago", or the date (mockup `ago`).
-enum Ago {
+nonisolated enum Ago {
     static func text(_ date: Date, now: Date = .now) -> String {
         let minutes = Int((now.timeIntervalSince(date) / 60).rounded())
         if minutes < 1 { return "Just now" }
