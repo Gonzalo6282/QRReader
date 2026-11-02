@@ -1,0 +1,58 @@
+# Privacy Policy
+
+Last updated: 2 November 2026
+
+## Introduction
+This Privacy Policy explains how Slice of Life Ltd ("we", "us" or "our") handles information relating to an identified or identifiable individual ("Personal Information") when you use Qodi: QR Code Reader & Barcode (the "App").
+
+Slice of Life Ltd, a company registered in the United Kingdom, is the controller of the Personal Information described in this Policy, under the UK GDPR, the UK Data Protection Act 2018, the EU General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA) and other applicable laws.
+
+For any question about this Policy, contact us at slice.of.life.ltd@gmail.com.
+
+## The Short Version
+- What you scan stays on your iPhone. Camera pictures are read on the device and are never saved or sent to us.
+- Your scan history and the codes you create are stored only on your iPhone. We cannot see them.
+- There is no account. Purchases use an anonymous identifier.
+- The link check runs on your iPhone. Links are not sent to any server to be checked.
+- In the UK, the EEA and Switzerland, anonymous analytics stay off until you allow them. You can turn them off at any time in Settings.
+- We do not show ads, we do not collect the advertising identifier (IDFA), and we do not sell or share your Personal Information for advertising.
+
+## Information That Stays on Your iPhone
+The codes you scan, their contents, your scan history, your favourites, the codes you create and your settings are stored on your iPhone only. Photos and files you choose to scan are read on the device; the App does not keep a copy. When you save a created code, it is added to your photo library with your permission. When you share something, it leaves the App only through the share option you pick.
+
+When you act on a scan (for example open a link, join a Wi-Fi network, add a contact or an event, call or send a message), the App hands that item to the iOS feature or app you chose, such as Safari, Contacts, Calendar, Maps, Mail or Messages. Those apps are covered by Apple's privacy policy and, for websites, by the policy of the site you open.
+
+## Information We Process
+
+### Purchases
+Subscriptions are bought through Apple. We do not receive your payment details. To know whether you have Pro, the App uses RevenueCat, which receives an anonymous app user identifier, your purchase history for this App and your App Store country. Paywalls may be shown through Superwall, which receives the same anonymous identifier and which paywall was shown. If you arrived from an Apple Search Ads campaign, an attribution token is passed to RevenueCat so we can measure our ads; it does not identify you.
+
+### Analytics and crash reports
+The App uses Google Firebase Analytics to understand how features are used (for example that a code was scanned and its type, or that a paywall was shown), and Firebase Crashlytics to receive crash reports. These events never include what a code contains, your photos, your contacts or your history. Each event carries the app version and your country. In the UK, the EEA and Switzerland, analytics stay off until you tap Allow, and you can change your choice in Settings. Elsewhere, analytics are on until you turn them off. Crash reports help us keep the App working and contain technical information about the crash and your device model. Firebase Remote Config lets us change some settings of the App, such as which paywall is shown, without an update.
+
+### Support
+If you email us, we receive your email address and what you write, and use them only to answer you.
+
+## Legal Bases
+We process Personal Information to provide the App and your subscription (contract), to keep the App working and secure (legitimate interests) and, where required, with your consent (analytics in the UK, the EEA and Switzerland). You can withdraw consent at any time in Settings.
+
+## Sharing
+We share Personal Information only with the service providers named above, who process it for us: Apple (App Store), RevenueCat, Superwall and Google (Firebase). We may also disclose information if required by law. We never sell Personal Information.
+
+## International Transfers
+Our service providers may process information outside the UK and the EEA, including in the United States. Where they do, they use safeguards recognised by law, such as the UK International Data Transfer Addendum and the EU Standard Contractual Clauses.
+
+## Retention
+Data on your iPhone stays until you delete it in the App or delete the App. Analytics data is kept by Firebase for up to 14 months. Purchase records are kept by RevenueCat while needed for your subscription and for our accounts. Support emails are kept for up to two years.
+
+## Your Rights
+Depending on where you live, you can ask to access, correct, delete or receive a copy of your Personal Information, to object to or restrict its use, and to withdraw consent. Because the App has no account, most of your data is only on your iPhone and you can delete it yourself. To make a request, email slice.of.life.ltd@gmail.com. You can also complain to your data protection authority; in the UK this is the Information Commissioner's Office (ico.org.uk).
+
+## Children
+The App is not directed at children under 13 and we do not knowingly collect their Personal Information.
+
+## Changes
+We may update this Policy. The date at the top shows when it last changed. Significant changes will be shown in the App.
+
+## Contact
+Slice of Life Ltd, United Kingdom. Email: slice.of.life.ltd@gmail.com. Website: https://slice-of-life.uk/qr/privacy

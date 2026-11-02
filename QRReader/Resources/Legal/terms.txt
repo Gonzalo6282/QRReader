@@ -1,0 +1,47 @@
+# Terms of Use
+
+Last updated: 2 November 2026
+
+## About These Terms
+These Terms of Use ("Terms") apply to Qodi: QR Code Reader & Barcode (the "App") from Slice of Life Ltd ("we", "us" or "our"), a company registered in the United Kingdom. By using the App you agree to these Terms. Apple's Licensed Application End User License Agreement also applies to your use of the App; where these Terms and Apple's agreement differ, Apple's agreement applies to the licence of the App itself.
+
+## What the App Does
+The App reads QR codes and barcodes with your iPhone's camera or from photos and files, shows what they contain, checks links on your iPhone, keeps a history on your iPhone and lets you create QR codes.
+
+## Free Features and Pro
+Scanning codes and seeing what they contain is free. Qodi Pro unlocks actions on your scans (such as opening links, joining Wi-Fi networks, adding contacts and events, calling, messaging, emailing, copying and sharing), batch scanning with CSV export, the full scan history, opening safe links automatically, and saving and sharing the codes you create.
+
+## Subscriptions
+- Qodi Pro is offered as a weekly subscription with a 3-day free trial, or as a yearly subscription without a free trial. Prices are shown in the App before you buy, in your local currency.
+- Payment is charged to your Apple Account when you confirm the purchase or, for the free trial, when the trial ends.
+- Subscriptions renew automatically at the same price and length unless you cancel at least 24 hours before the end of the current period. Your Apple Account is charged for renewal within 24 hours before the end of the period.
+- You can manage or cancel your subscription in the Settings app: tap your name, then Subscriptions. Deleting the App does not cancel a subscription.
+- If you cancel during a free trial, you are not charged. Any unused part of a free trial ends when you buy a subscription.
+- Refunds are handled by Apple under its policies: reportaproblem.apple.com.
+
+## Codes You Create
+Codes you create contain your link or details directly. They do not pass through our servers and keep working whether or not you have a subscription. You are responsible for what you put in a code and for making sure you have the right to share it.
+
+## Link Check
+The link check looks for common warning signs, such as look-alike brand names, bare IP addresses, short links and pages without HTTPS. It is a guide, not a guarantee: a link marked as normal can still be harmful, and a link with a warning can be safe. Use your own judgement before opening links, joining networks or entering passwords.
+
+## Acceptable Use
+Do not use the App to break the law, to harm others or to interfere with the App or its services. Do not copy, modify, reverse engineer or resell the App except as allowed by law.
+
+## Third-Party Apps and Websites
+Actions hand items to other apps and websites (for example Safari, Contacts, Calendar, Maps, Mail and Messages). We are not responsible for their content or how they work.
+
+## Availability and Changes
+We may update, change or stop parts of the App. We will not remove a feature you have paid for during a paid period without telling you and, where required, offering a remedy.
+
+## Disclaimer
+The App is provided "as is". We do not promise that every code can be read or that the App will be free of errors. Nothing in these Terms limits rights you have under consumer law that cannot be limited.
+
+## Liability
+To the extent permitted by law, we are not liable for indirect or consequential loss, or for loss caused by content inside codes or by third-party apps and websites. Our total liability to you for any claim about the App is limited to the amount you paid for the App in the 12 months before the claim. We do not exclude liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot be excluded by law.
+
+## Law
+These Terms are governed by the laws of England and Wales. If you live in another country, you also keep the protections of the law where you live, and you may bring a claim in your local courts.
+
+## Contact
+Slice of Life Ltd, United Kingdom. Email: slice.of.life.ltd@gmail.com. Website: https://slice-of-life.uk/qr/terms

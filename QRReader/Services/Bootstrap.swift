@@ -21,5 +21,6 @@ enum Bootstrap {
             Track.log(.paywallView, ["placement": placement, "paywall_id": paywallID])
         }
         PaywallService.shared.configure(superwallAPIKey: AppKey.infoPlist("SuperwallAPIKey", prefix: "pk_"))
+        if !UserDefaults.standard.bool(forKey: SettingsKey.onboarded) { Track.log(.firstOpen) }
     }
 }

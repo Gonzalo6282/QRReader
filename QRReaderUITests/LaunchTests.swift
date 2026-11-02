@@ -17,7 +17,7 @@ final class LaunchTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Camera access is off"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.buttons["batchChip"].exists)
         app.tabBars.buttons["History"].tap()
-        XCTAssertTrue(app.staticTexts["Scan history (M5)"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["No scans yet"].waitForExistence(timeout: 5))
     }
 
     @MainActor
@@ -29,5 +29,21 @@ final class LaunchTests: XCTestCase {
         XCTAssertTrue(chip.waitForExistence(timeout: 10))
         chip.tap()
         XCTAssertTrue(app.staticTexts["Do everything with your scans"].waitForExistence(timeout: 10))
+    }
+
+    @MainActor
+    func testCreateShowsALivePreview() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-uiTesting"]
+        app.launch()
+        app.tabBars.buttons["Create"].tap()
+        let link = app.buttons["create-link"]
+        XCTAssertTrue(link.waitForExistence(timeout: 5))
+        link.tap()
+        XCTAssertTrue(app.staticTexts["Fill in the details to see your code"].waitForExistence(timeout: 5))
+        let field = app.textFields["field-url"]
+        field.tap()
+        field.typeText("slice-of-life.uk")
+        XCTAssertTrue(app.images["QR code preview"].waitForExistence(timeout: 5))
     }
 }

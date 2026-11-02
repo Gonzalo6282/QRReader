@@ -5,23 +5,40 @@ import SwiftUI
 /// The four tabs from the mockup, the result card, the toast and the native paywall.
 struct RootView: View {
     @Environment(AppModel.self) private var app
+    @AppStorage(SettingsKey.onboarded) private var onboarded = false
 
     var body: some View {
+        if onboarded || (AppConfig.isUITesting && !AppConfig.arguments.contains("-showOnboarding")) {
+            tabs
+        } else {
+            OnboardingFlow {
+                onboarded = true
+                Track.log(.onboardingComplete)
+                // Soft paywall over the scanner, closable after 2.5 s.
+                Task { @MainActor in
+                    try? await Task.sleep(for: .milliseconds(400))
+                    PaywallService.shared.gate(.onboardingEnd) {}
+                }
+            }
+        }
+    }
+
+    private var tabs: some View {
         @Bindable var app = app
-        TabView(selection: tabSelection) {
+        return TabView(selection: tabSelection) {
             ScannerScreen()
                 .toolbarBackground(.black, for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
                 .tabItem { Label("Scan", systemImage: "qrcode.viewfinder") }
                 .tag(AppModel.Tab.scan)
-            PlaceholderScreen(title: "Create", note: "Create QR codes (M5)")
+            CreateScreen()
                 .tabItem { Label("Create", systemImage: "qrcode") }
                 .tag(AppModel.Tab.create)
-            PlaceholderScreen(title: "History", note: "Scan history (M5)")
+            HistoryScreen()
                 .tabItem { Label("History", systemImage: "clock.arrow.circlepath") }
                 .tag(AppModel.Tab.history)
-            PlaceholderScreen(title: "Settings", note: "Settings (M6)")
+            SettingsScreen()
                 .tabItem { Label("Settings", systemImage: "slider.horizontal.3") }
                 .tag(AppModel.Tab.settings)
         }
@@ -55,22 +72,6 @@ struct RootView: View {
                     app.tab = newTab
                 }
             })
-    }
-}
-
-private struct PlaceholderScreen: View {
-    let title: String
-    let note: String
-    @Environment(\.sliceTheme) private var theme
-
-    var body: some View {
-        VStack(spacing: 8) {
-            Text(title).textStyle(.largeTitle)
-            Text(note).textStyle(.secondary)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(theme.canvas.ignoresSafeArea())
-        .accessibilityIdentifier("screen-\(title)")
     }
 }
 
