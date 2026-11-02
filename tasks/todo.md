@@ -17,7 +17,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions.
 - [x] T1.5 `SafeLink` (mockup rules)
 - [x] T1.6 `CSVWriter`
 - [x] T1.7 `QRPayloadBuilder` (8 Create types) + round-trip tests
-- [ ] ✅ CI green, 100% coverage
+- [x] ✅ CI green, 100% coverage (57 tests, 620 lines)
 
 ## M2 Foundation
 - [ ] T2.1 `QodiTheme.brand` / `.main`, colour assets, text styles
