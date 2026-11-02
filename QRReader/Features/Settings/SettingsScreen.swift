@@ -1,3 +1,4 @@
+import Foundation
 import SliceAnalytics
 import SlicePurchases
 import SliceUI

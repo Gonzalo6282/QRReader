@@ -1,3 +1,4 @@
+import SliceUI
 import CoreImage
 import SliceQR
 import SwiftUI

@@ -1,3 +1,4 @@
+import Foundation
 import ScanKit
 import SliceUI
 import SwiftUI

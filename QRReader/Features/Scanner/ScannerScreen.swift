@@ -1,3 +1,4 @@
+import Foundation
 import PhotosUI
 import ScanKit
 import SlicePurchases

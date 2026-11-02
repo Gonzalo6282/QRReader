@@ -1,3 +1,4 @@
+import Foundation
 import ScanKit
 
 /// The 8 Create types and their form fields (mockup `CTYPES`, `CFIELDS`).

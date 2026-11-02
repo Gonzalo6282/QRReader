@@ -1,3 +1,4 @@
+import Foundation
 import Contacts
 import EventKit
 import NetworkExtension
