@@ -126,6 +126,15 @@ struct QRPayloadBuilderTests {
         #expect(built == "BEGIN:VCARD\nVERSION:3.0\nN:Doe;Jane;;;\nFN:Jane Doe\nEND:VCARD")
     }
 
+    @Test func contactWithFullNameOnly() {
+        let built = QRPayloadBuilder.contact(Contact(fullName: "Qodi Support", emails: ["a@b.co"]))
+        #expect(built == "BEGIN:VCARD\nVERSION:3.0\nN:;;;;\nFN:Qodi Support\nEMAIL:a@b.co\nEND:VCARD")
+    }
+
+    @Test func percentEncoding() {
+        #expect(QRPayloadBuilder.percentEncode("a b&c=é\n~") == "a%20b%26c%3D%C3%A9%0A~")
+    }
+
     @Test func emailRoundTrip() {
         let e = Email(address: "bookings@thegreenroom.co.uk", subject: "Table & drinks = 1+1?", body: "Hi #4\nThanks")
         #expect(PayloadParser.parse(raw: QRPayloadBuilder.email(e)) == .email(e))

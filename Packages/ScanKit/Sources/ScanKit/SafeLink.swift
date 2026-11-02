@@ -51,7 +51,7 @@ public enum SafeLink {
         if host.contains(":") { return true }
         let parts = host.split(separator: ".", omittingEmptySubsequences: false)
         return parts.count == 4 && parts.allSatisfy { part in
-            !part.isEmpty && part.count <= 3 && part.allSatisfy(\.isASCIIDigit) && (Int(part) ?? 256) <= 255
+            part.allSatisfy(\.isASCIIDigit) && UInt8(part) != nil
         }
     }
 }

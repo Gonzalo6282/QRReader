@@ -103,10 +103,18 @@ public enum QRPayloadBuilder {
         return out
     }
 
+    /// Percent-encodes everything except RFC 3986 unreserved characters (UTF-8 bytes as %XX).
     static func percentEncode(_ s: String) -> String {
-        var allowed = CharacterSet.urlQueryAllowed
-        allowed.remove(charactersIn: "&=+?#")
-        return s.addingPercentEncoding(withAllowedCharacters: allowed) ?? s
+        let unreserved = Set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~".utf8)
+        var out = ""
+        for byte in s.utf8 {
+            if unreserved.contains(byte) {
+                out.append(Character(Unicode.Scalar(byte)))
+            } else {
+                out += "%" + String(byte, radix: 16, uppercase: true).leftPadded
+            }
+        }
+        return out
     }
 
     static func dialable(_ number: String) -> String {
@@ -114,4 +122,9 @@ public enum QRPayloadBuilder {
         let digits = t.filter(\.isASCIIDigit)
         return (t.hasPrefix("+") ? "+" : "") + digits
     }
+}
+
+extension String {
+    /// Two hex digits ("A" → "0A").
+    var leftPadded: String { count == 1 ? "0" + self : self }
 }
