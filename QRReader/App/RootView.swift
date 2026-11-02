@@ -1,5 +1,6 @@
 import SlicePurchases
 import SliceUI
+import SwiftData
 import SwiftUI
 
 /// The four tabs from the mockup, the result card, the toast and the native paywall.
