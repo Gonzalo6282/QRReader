@@ -10,13 +10,13 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions.
 - [ ] ✅ You: free about 20 GB, clone, open project, set signing team, ⌘R on iPhone 17 Pro sim
 
 ## M1 ScanKit (test-first, 100% coverage)
-- [ ] T1.1 `BarcodeFormat` + display names
-- [ ] T1.2 `PayloadParser`: URL, text, product barcodes
-- [ ] T1.3 Wi-Fi (escaping), phone, SMS, email, geo
-- [ ] T1.4 vCard, MECARD, VEVENT
-- [ ] T1.5 `SafeLink` (mockup rules)
-- [ ] T1.6 `CSVWriter`
-- [ ] T1.7 `QRPayloadBuilder` (8 Create types) + round-trip tests
+- [x] T1.1 `BarcodeFormat` + display names
+- [x] T1.2 `PayloadParser`: URL, text, product barcodes
+- [x] T1.3 Wi-Fi (escaping), phone, SMS, email, geo
+- [x] T1.4 vCard, MECARD, VEVENT
+- [x] T1.5 `SafeLink` (mockup rules)
+- [x] T1.6 `CSVWriter`
+- [x] T1.7 `QRPayloadBuilder` (8 Create types) + round-trip tests
 - [ ] ✅ CI green, 100% coverage
 
 ## M2 Foundation
