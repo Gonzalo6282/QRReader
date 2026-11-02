@@ -85,9 +85,9 @@ public enum PayloadParser {
                 c.givenName = parts.dropFirst().first?.trimmed.nonEmpty
             case "ORG": c.organization = components(line.value).map(\.trimmed).filter { !$0.isEmpty }.joined(separator: ", ").nonEmpty
             case "TITLE": c.title = unescape(line.value).trimmed.nonEmpty
-            case "TEL": c.phones.append(contentsOf: unescape(line.value).trimmed.nonEmpty.map { [$0] } ?? [])
-            case "EMAIL": c.emails.append(contentsOf: unescape(line.value).trimmed.nonEmpty.map { [$0] } ?? [])
-            case "URL": c.urls.append(contentsOf: unescape(line.value).trimmed.nonEmpty.map { [$0] } ?? [])
+            case "TEL": add(line.value, to: &c.phones)
+            case "EMAIL": add(line.value, to: &c.emails)
+            case "URL": add(line.value, to: &c.urls)
             case "ADR": c.address = components(line.value).map(\.trimmed).filter { !$0.isEmpty }.joined(separator: ", ").nonEmpty
             case "NOTE": c.note = unescape(line.value).trimmed.nonEmpty
             default: break
@@ -116,6 +116,11 @@ public enum PayloadParser {
             }
         }
         return finish(c)
+    }
+
+    private static func add(_ value: String, to list: inout [String]) {
+        let v = unescape(value).trimmed
+        if !v.isEmpty { list.append(v) }
     }
 
     private static func finish(_ contact: Contact) -> Payload? {
@@ -171,9 +176,9 @@ public enum PayloadParser {
         let t = parts[1]
         guard t.count == 4 || t.count == 6, t.allSatisfy(\.isASCIIDigit),
               let hour = Int(t.prefix(2)), let minute = Int(t.dropFirst(2).prefix(2)),
+              let second = t.count == 6 ? Int(t.suffix(2)) : 0,
               hour < 24, minute < 60
         else { return nil }
-        let second = t.count == 6 ? Int(t.suffix(2)) ?? 0 : 0
         return EventTime(year: year, month: month, day: day, hour: hour, minute: minute, second: second, isUTC: utc)
     }
 

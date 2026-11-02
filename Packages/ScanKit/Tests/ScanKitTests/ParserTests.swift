@@ -72,6 +72,20 @@ struct ParserTests {
         #expect(PayloadParser.parse(raw: "WIFI:T:WPA;S:Home;P:;;") == .wifi(WiFi(ssid: "Home", password: nil, security: .wpa)))
     }
 
+    @Test func duplicateFieldsKeepTheFirst() {
+        #expect(PayloadParser.parse(raw: "WIFI:S:First;S:Second;;") == .wifi(WiFi(ssid: "First", security: .open)))
+        #expect(PayloadParser.parse(raw: "MATMSG:TO:a@b.com;TO:c@d.com;;") == .email(Email(address: "a@b.com")))
+    }
+
+    @Test func emptyContactLinesAreSkipped() {
+        guard case .contact(let c) = PayloadParser.parse(raw: "BEGIN:VCARD\nFN:A\nEMAIL:\nURL: \nTEL:\nEND:VCARD") else { Issue.record("contact"); return }
+        #expect(c.emails.isEmpty && c.urls.isEmpty && c.phones.isEmpty)
+    }
+
+    @Test func strayPercentIsKept() {
+        #expect(PayloadParser.parse(raw: "mailto:a@b.com?subject=50%off") == .email(Email(address: "a@b.com", subject: "50%off")))
+    }
+
     @Test func wifiWithoutNetworkNameIsText() {
         #expect(PayloadParser.parse(raw: "WIFI:T:WPA;P:x;;").kind == .text)
         #expect(PayloadParser.parse(raw: "WIFI:S:;;").kind == .text)
