@@ -1,0 +1,11 @@
+.DS_Store
+*.xcuserstate
+xcuserdata/
+DerivedData/
+build/
+.build/
+*.xcarchive
+Secrets.xcconfig
+GoogleService-Info.plist
+.swiftpm/
+.spm/

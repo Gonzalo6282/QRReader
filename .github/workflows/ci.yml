@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Tests run on the newest Xcode, whose simulators are installed on the runner.
+  test:
+    runs-on: macos-26
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .spm
+          key: spm-${{ hashFiles('QRReader.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'QRReader.xcodeproj/project.pbxproj') }}
+          restore-keys: spm-
+
+      - name: Find newest Xcode
+        run: |
+          LATEST=$(ls -d /Applications/Xcode_26*.app | grep -v -i beta | sort -V | tail -1)
+          echo "XC_LATEST=$LATEST/Contents/Developer" >> "$GITHUB_ENV"
+          echo "::notice title=Tests use::$(basename "$LATEST")"
+
+      - name: ScanKit tests
+        if: success() || failure()
+        run: |
+          export DEVELOPER_DIR="$XC_LATEST"
+          swift test --package-path Packages/ScanKit --enable-code-coverage 2>&1 | tee swift-test.log
+          STATUS=${PIPESTATUS[0]}
+          grep -E "✘|error:" swift-test.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=ScanKit::$l"; done
+          [ $STATUS -ne 0 ] && exit $STATUS
+          python3 scripts/ci-coverage.py "$(swift test --package-path Packages/ScanKit --show-codecov-path)" 100
+
+      - name: App tests (iPhone)
+        if: success() || failure()
+        run: DEVELOPER_DIR="$XC_LATEST" scripts/ci-xcode-test.sh iPhone "iPhone 17 Pro"
+
+
+      # Full logs + xcresult failure summaries on the ci-logs branch (the raw
+      # Actions logs can't be downloaded from the cloud workspace).
+      - name: Publish logs
+        if: (success() || failure()) && github.event_name == 'push'
+        run: |
+          OUT="${{ runner.temp }}/logs"; mkdir -p "$OUT"
+          cp build/*.log build/*-summary.json swift-test.log "$OUT"/ 2>/dev/null || true
+          for r in build/*.xcresult; do
+            [ -d "$r" ] || continue
+            n=$(basename "$r" .xcresult)
+            DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results tests --path "$r" > "$OUT/$n-tests.json" 2>&1 || true
+            DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results summary --path "$r" > "$OUT/$n-summary.json" 2>&1 || true
+            mkdir -p "$OUT/$n-attachments"
+            DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool export attachments --path "$r" --output-path "$OUT/$n-attachments" --only-failures > /dev/null 2>&1 || true
+          done
+          find ~/Library/Logs/DiagnosticReports -mmin -90 \( -name "*.ips" -o -name "*.crash" \) -exec cp {} "$OUT"/ \; 2>/dev/null || true
+          cd "$OUT"
+          git init -q -b ci-logs
+          git config user.name "CI"; git config user.email "ci@users.noreply.github.com"
+          echo "Logs from ${GITHUB_SHA}" > README.md
+          git add -A && git commit -q -m "Logs for ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-logs
+
+  # Same Xcode as Gonzalo's Mac (26.1.1): everything must compile with it.
+  # The runner lacks the iOS 26.1 platform, so it is downloaded first.
+  compile-xcode-26-1:
+    runs-on: macos-26
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .spm
+          key: spm-${{ hashFiles('QRReader.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'QRReader.xcodeproj/project.pbxproj') }}
+          restore-keys: spm-
+
+      - name: Select Xcode 26.1
+        run: |
+          MAC=$(ls -d /Applications/Xcode_26.1*.app | sort -V | tail -1)
+          echo "DEVELOPER_DIR=$MAC/Contents/Developer" >> "$GITHUB_ENV"
+          echo "::notice title=Compile check::$(basename "$MAC")"
+
+      - name: Compile app, tests and ScanKit
+        run: |
+          swift build --package-path Packages/ScanKit --build-tests
+          build() {
+            xcodebuild build-for-testing -project QRReader.xcodeproj -scheme QRReader \
+              -destination 'generic/platform=iOS' -clonedSourcePackagesDirPath .spm CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1
+          }
+          if ! build; then
+            if grep -q -E "is not installed|No simulator runtime" build-mac.log; then
+              echo "::notice::iOS platform missing for this Xcode; downloading it"
+              xcodebuild -downloadPlatform iOS > download.log 2>&1 \
+                || { tail -6 download.log | while IFS= read -r l; do echo "::error title=downloadPlatform::$l"; done; exit 1; }
+              build || true
+            fi
+          fi
+          if grep -q "\*\* TEST BUILD SUCCEEDED \*\*" build-mac.log; then
+            echo "Compiled OK with $(xcodebuild -version | head -1)"
+            # The App Store build must compile too (catches debug-only code).
+            xcodebuild build -project QRReader.xcodeproj -scheme QRReader -configuration Release \
+              -destination 'generic/platform=iOS' -clonedSourcePackagesDirPath .spm CODE_SIGNING_ALLOWED=NO > build-release.log 2>&1 \
+              || { grep -E "error:" build-release.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=release build::$l"; done; tail -30 build-release.log; exit 1; }
+            echo "Release configuration compiled OK"
+          else
+            grep -E "error:" build-mac.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=compile 26.1::$l"; done
+            tail -40 build-mac.log; exit 1
+          fi
