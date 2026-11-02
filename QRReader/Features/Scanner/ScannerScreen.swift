@@ -1,3 +1,4 @@
+import SliceUI
 import Foundation
 import PhotosUI
 import ScanKit
