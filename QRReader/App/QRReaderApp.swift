@@ -1,16 +1,21 @@
+import SwiftData
 import SwiftUI
-import SliceUI
 
 @main
 struct QRReaderApp: App {
+    @State private var app = AppModel()
+    private let container: ModelContainer
+
     init() {
-        // Sheets, previews and UIKit-hosted views use this theme.
-        SliceTheme.appDefault = QodiTheme.main
+        Bootstrap.start()
+        container = ModelStore.make()
     }
 
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(app)
         }
+        .modelContainer(container)
     }
 }
