@@ -67,9 +67,11 @@ struct ResultSheet: View {
         .presentationDragIndicator(.visible)
         .sheet(item: $subSheet) { sheet in
             switch sheet {
-            case .share(let items): ShareSheet(items: items).presentationDetents([.medium, .large])
-            case .contact(let box): NewContactSheet(contact: box.contact) { subSheet = nil }
-            case .event(let event): NewEventSheet(event: event) { subSheet = nil }
+            case .share(let items):
+                ShareSheet(items: items) { completed, _ in if completed { Rating.happyMoment() } }
+                    .presentationDetents([.medium, .large])
+            case .contact(let box): NewContactSheet(contact: box.contact) { subSheet = nil; Rating.happyMoment() }
+            case .event(let event): NewEventSheet(event: event) { subSheet = nil; Rating.happyMoment() }
             }
         }
         .alert("Delete this scan?", isPresented: $confirmsDelete) {
@@ -226,7 +228,10 @@ struct ResultSheet: View {
         PaywallService.shared.gate(.scanResultAction) {
             Task { @MainActor in
                 switch await ResultActions.perform(action, payload: payload, raw: raw) {
-                case .toast(let text, let icon): app.show(text, icon: icon)
+                case .toast(let text, let icon):
+                    app.show(text, icon: icon)
+                    // Copy and a joined network are happy moments; a failed join isn't.
+                    if !icon.contains("exclamationmark") { Rating.happyMoment() }
                 case .share(let items): subSheet = .share(items)
                 case .addContact(let contact): subSheet = .contact(CNMutableContactBox(contact: contact))
                 case .addEvent(let event): subSheet = .event(event)

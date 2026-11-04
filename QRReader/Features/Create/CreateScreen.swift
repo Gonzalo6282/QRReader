@@ -89,7 +89,10 @@ struct CreateFormView: View {
         }
         .background(theme.canvas.ignoresSafeArea())
         .navigationTitle(type.title)
-        .sheet(item: $shareImage) { item in ShareSheet(items: [item.image]).presentationDetents([.medium, .large]) }
+        .sheet(item: $shareImage) { item in
+            ShareSheet(items: [item.image]) { completed, _ in if completed { Rating.happyMoment() } }
+                .presentationDetents([.medium, .large])
+        }
     }
 
     private var form: some View {
@@ -182,6 +185,7 @@ struct CreateFormView: View {
             } else {
                 Task { @MainActor in
                     let ok = await PhotoSaver.save(image)
+                    if ok { Rating.happyMoment() }
                     app.show(ok ? "Saved to Photos" : "Couldn’t save. Allow Qodi to add photos in Settings.",
                              icon: ok ? "photo" : "exclamationmark.triangle.fill")
                 }

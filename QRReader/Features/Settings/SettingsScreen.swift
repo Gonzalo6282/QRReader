@@ -35,7 +35,7 @@ struct SettingsScreen: View {
                         Track.log(.consent, ["analytics": on])
                     }) : nil,
                 help: SettingsHelp(faqs: Self.faqs, reportTopics: Self.reportTopics, reportFooter: "We answer within 2 working days."),
-                share: SettingsShare(message: "I scan QR codes and barcodes with Qodi: https://apps.apple.com/app/id6829893719"),
+                share: SettingsShare(message: Self.shareMessage),
                 header: AnyView(ProCard()),
                 debug: debugRows
             ) {
@@ -98,6 +98,14 @@ struct SettingsScreen: View {
         .init("Why won't a code scan?", "Hold the iPhone steady about 15 cm away, turn on the torch in the dark, or use 2× for small codes. For a screenshot or photo, use the photo button at the top left of the scanner."),
         .init("How do I cancel?", "Open the Settings app, tap your name, then Subscriptions. Deleting Qodi does not cancel the subscription."),
     ]
+
+    /// Sent with the Settings "Share Qodi" row: the app's name, what it does, then the link.
+    static let shareMessage = """
+        Have you tried Qodi? It's the QR code and barcode scanner I use. It checks links before you open them, \
+        joins Wi-Fi from a code, and makes your own QR codes that never expire.
+
+        Get Qodi on the App Store: https://apps.apple.com/app/id6829893719
+        """
 
     static let reportTopics = ["A code won’t scan", "Wi-Fi didn’t join", "Subscription or payment", "Something else"]
 }
