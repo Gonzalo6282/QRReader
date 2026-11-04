@@ -190,13 +190,8 @@ struct CreateFormView: View {
     }
 
     private func record(_ payload: String) {
-        let record = ScanRecord(code: ScannedCode(raw: payload, format: .qr), source: .created)
-        record.createdType = type.rawValue
-        record.colorHex = colour.rawValue
-        record.hasLogo = logo
-        context.insert(record)
-        try? context.save()
-        Track.log(.qrCreated, ["type": type.rawValue, "logo": logo])
+        let isNew = CreatedCodes.save(payload: payload, type: type.rawValue, colourHex: colour.rawValue, logo: logo, in: context)
+        if isNew { Track.log(.qrCreated, ["type": type.rawValue, "logo": logo]) }
     }
 }
 
