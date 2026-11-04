@@ -1,0 +1,161 @@
+Building for debugging...
+[0/7] Write sources
+[0/7] /Users/runner/work/QRReader/QRReader/Packages/ScanKit/.build/arm64-apple-macosx/debug/ScanKitPackageTests.derived/runner.swift
+[2/7] Write sources
+[4/7] Write swift-version-7974D3F7F03D5E95.txt
+[6/13] Compiling ScanKit BarcodeFormat.swift
+[7/13] Compiling ScanKit CSVWriter.swift
+[8/13] Compiling ScanKit Payload.swift
+[9/13] Compiling ScanKit PayloadParser.swift
+[10/13] Compiling ScanKit QRPayloadBuilder.swift
+[11/13] Emitting module ScanKit
+[12/15] Compiling ScanKit SafeLink.swift
+[13/15] Compiling ScanKit ScanKit.swift
+[14/18] Compiling ScanKitTests EngineTests.swift
+[15/18] Compiling ScanKitTests ParserTests.swift
+[16/18] Emitting module ScanKitTests
+[17/19] Compiling ScanKitTests ScanKitTests.swift
+[18/21] Compiling ScanKitPackageTests runner.swift
+[19/21] Emitting module ScanKitPackageTests
+[19/21] Write Objects.LinkFileList
+[20/21] Linking ScanKitPackageTests
+Build complete! (30.02s)
+Test Suite 'All tests' started at 2026-11-04 18:11:31.470.
+Test Suite 'All tests' passed at 2026-11-04 18:11:31.480.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.010) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite ScanKitTests started.
+◇ Suite QRPayloadBuilderTests started.
+◇ Suite SafeLinkTests started.
+◇ Suite ParserTests started.
+◇ Suite BarcodeFormatTests started.
+◇ Test hasAVersion() started.
+◇ Test percentEncoding() started.
+◇ Suite CSVWriterTests started.
+◇ Test phoneAndSMS() started.
+◇ Test links() started.
+◇ Test contactWithFullNameOnly() started.
+◇ Test social() started.
+◇ Test emailRoundTrip() started.
+◇ Test contactRoundTrip() started.
+◇ Test wifiRoundTrip() started.
+◇ Test shorteners() started.
+◇ Test bareIPAddresses() started.
+◇ Test brokenLinks() started.
+◇ Test secureNormalLink() started.
+◇ Test contactWithoutFullName() started.
+◇ Test mailtoFromMockup() started.
+◇ Test fieldsHandleStrayInput() started.
+◇ Test linkWithoutHostIsText() started.
+◇ Test matmsg() started.
+◇ Test linearNonProductIsText() started.
+◇ Test lookalikeBrands() started.
+◇ Test badGeoIsText() started.
+◇ Test emptyContactLinesAreSkipped() started.
+◇ Test plainHTTP() started.
+◇ Test wifi() started.
+◇ Test eventInsideCalendarWithEndAndDescription() started.
+◇ Test vcardNameFallbacks() started.
+◇ Test eventTimes() started.
+◇ Test eventWithoutSummaryOrStartIsText() started.
+◇ Test linkIsTrimmedAndCaseInsensitive() started.
+◇ Test phone() started.
+◇ Test productBarcodes() started.
+◇ Test vcardFromMockup() started.
+◇ Test parseScannedCode() started.
+◇ Test mecard() started.
+◇ Test eventTimeDates() started.
+◇ Test geoFromMockup() started.
+◇ Test eventFromMockup() started.
+◇ Test bareWwwBecomesHTTPS() started.
+◇ Test componentsKeepEscapes() started.
+◇ Test strayPercentIsKept() started.
+◇ Test plainText() started.
+◇ Test smsURI() started.
+◇ Test geoWithParamsAndQuery() started.
+◇ Test wifiWithoutNetworkNameIsText() started.
+◇ Test wifiSecurityVariants() started.
+◇ Test menuLink() started.
+◇ Test securityDisplayNames() started.
+◇ Test twoDimensionalFormatsParseLikeQR() started.
+◇ Test smsTo() started.
+◇ Test vcardParamsGroupsFoldingAndEscapes() started.
+◇ Test everyKindHasAName() started.
+◇ Test duplicateFieldsKeepTheFirst() started.
+◇ Test wifiEscapesAnyOrderAndHidden() started.
+◇ Test visionNames() started.
+◇ Test groups() started.
+◇ Test displayNamesMatchTheMockup() started.
+◇ Test avFoundationNames() started.
+◇ Test upcAComesBackFromEAN13() started.
+◇ Test escapesAsRFC4180() started.
+◇ Test emptyAndCarriageReturn() started.
+✔ Test phoneAndSMS() passed after 0.007 seconds.
+✔ Test percentEncoding() passed after 0.008 seconds.
+✔ Test contactWithFullNameOnly() passed after 0.007 seconds.
+✔ Test social() passed after 0.007 seconds.
+✔ Test hasAVersion() passed after 0.008 seconds.
+✔ Test wifiRoundTrip() passed after 0.007 seconds.
+✔ Test emailRoundTrip() passed after 0.007 seconds.
+✔ Test shorteners() passed after 0.007 seconds.
+✔ Test contactRoundTrip() passed after 0.007 seconds.
+✔ Test brokenLinks() passed after 0.007 seconds.
+✔ Test links() passed after 0.008 seconds.
+✔ Test bareIPAddresses() passed after 0.008 seconds.
+✔ Test contactWithoutFullName() passed after 0.007 seconds.
+✔ Test secureNormalLink() passed after 0.007 seconds.
+✔ Test linkWithoutHostIsText() passed after 0.007 seconds.
+✔ Test fieldsHandleStrayInput() passed after 0.007 seconds.
+✔ Test linearNonProductIsText() passed after 0.007 seconds.
+✔ Test matmsg() passed after 0.007 seconds.
+✔ Test plainHTTP() passed after 0.007 seconds.
+✔ Test mailtoFromMockup() passed after 0.007 seconds.
+✔ Test lookalikeBrands() passed after 0.008 seconds.
+✔ Test wifi() passed after 0.007 seconds.
+✔ Test eventInsideCalendarWithEndAndDescription() passed after 0.007 seconds.
+✔ Test emptyContactLinesAreSkipped() passed after 0.007 seconds.
+✔ Test vcardNameFallbacks() passed after 0.007 seconds.
+✔ Test eventWithoutSummaryOrStartIsText() passed after 0.007 seconds.
+✔ Test eventTimes() passed after 0.007 seconds.
+✔ Test phone() passed after 0.007 seconds.
+✔ Test linkIsTrimmedAndCaseInsensitive() passed after 0.007 seconds.
+✔ Test parseScannedCode() passed after 0.007 seconds.
+✔ Test badGeoIsText() passed after 0.007 seconds.
+✔ Test vcardFromMockup() passed after 0.007 seconds.
+✔ Test productBarcodes() passed after 0.007 seconds.
+✔ Test mecard() passed after 0.007 seconds.
+✔ Test componentsKeepEscapes() passed after 0.006 seconds.
+✔ Test bareWwwBecomesHTTPS() passed after 0.006 seconds.
+✔ Test strayPercentIsKept() passed after 0.006 seconds.
+✔ Test geoFromMockup() passed after 0.006 seconds.
+✔ Test eventFromMockup() passed after 0.006 seconds.
+✔ Test plainText() passed after 0.006 seconds.
+✔ Test wifiWithoutNetworkNameIsText() passed after 0.006 seconds.
+✔ Test smsURI() passed after 0.006 seconds.
+✔ Test geoWithParamsAndQuery() passed after 0.006 seconds.
+✔ Test securityDisplayNames() passed after 0.006 seconds.
+✔ Test wifiSecurityVariants() passed after 0.006 seconds.
+✔ Test eventTimeDates() passed after 0.007 seconds.
+✔ Test menuLink() passed after 0.006 seconds.
+✔ Test twoDimensionalFormatsParseLikeQR() passed after 0.006 seconds.
+✔ Test smsTo() passed after 0.006 seconds.
+✔ Test everyKindHasAName() passed after 0.006 seconds.
+✔ Test duplicateFieldsKeepTheFirst() passed after 0.006 seconds.
+✔ Test vcardParamsGroupsFoldingAndEscapes() passed after 0.006 seconds.
+✔ Test wifiEscapesAnyOrderAndHidden() passed after 0.007 seconds.
+✔ Test visionNames() passed after 0.004 seconds.
+✔ Test displayNamesMatchTheMockup() passed after 0.004 seconds.
+✔ Test avFoundationNames() passed after 0.003 seconds.
+✔ Test groups() passed after 0.004 seconds.
+✔ Test upcAComesBackFromEAN13() passed after 0.003 seconds.
+✔ Test escapesAsRFC4180() passed after 0.001 seconds.
+✔ Suite QRPayloadBuilderTests passed after 0.012 seconds.
+✔ Suite SafeLinkTests passed after 0.012 seconds.
+✔ Suite ScanKitTests passed after 0.013 seconds.
+✔ Test emptyAndCarriageReturn() passed after 0.001 seconds.
+✔ Suite ParserTests passed after 0.012 seconds.
+✔ Suite BarcodeFormatTests passed after 0.013 seconds.
+✔ Suite CSVWriterTests passed after 0.011 seconds.
+✔ Test run with 60 tests in 6 suites passed after 0.016 seconds.
