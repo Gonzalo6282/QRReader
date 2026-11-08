@@ -680,7 +680,7 @@
 			repositoryURL = "https://github.com/Gonzalo6282/SliceLibrary";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.7.0;
+				minimumVersion = 0.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

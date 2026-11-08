@@ -11,3 +11,4 @@
 - Gonzalo: try the app on the simulator and his iPhone (scanner, actions, Create, History, Settings).
 - Gonzalo: App Store Connect products, RevenueCat, Superwall keys (M6), Firebase plist (M7).
 - Gonzalo: read the draft privacy policy and terms (QRReader/Resources/Legal).
+| 8 Nov 2026 | M6 accounts + paywalls | Firebase app (plist local only), Remote Config `onboarding_soft_paywall`. Superwall project "Qodi": products, campaign "Qodi Pro" (5 placements) and "Qodi Onboarding" (`onboarding_end`, Delayed X close ≈2.5 s); paywall shows weekly first with 3-day trial badge, trial-aware button, Terms/Privacy/Restore, reminder toggle on and trial reminder 1 day 12 h before the end. Review screenshots (1284×2778) on both subscriptions. RevenueCat ↔ Firebase integration. SliceLibrary 0.7.1 (PR #10): Firebase app instance ID sent to RevenueCat when analytics is allowed. Tested on iPhone |

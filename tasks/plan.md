@@ -16,7 +16,7 @@ updated → commit + push to `main`.
   looking at the UI against the mockup.
 - **Xcode project:** folder-synchronised groups (Xcode 16+ format), copied from Duly's set-up, so new
   Swift files appear in Xcode by themselves.
-- **Library:** SliceLibrary from tag 0.7.0 ("Up to Next Minor"). Library changes only on their own
+- **Library:** SliceLibrary from tag 0.7.1 ("Up to Next Minor"). Library changes only on their own
   branch + pull request in SliceLibrary, generic, with tests and a new tag.
 
 ## Milestones
