@@ -102,6 +102,7 @@ struct OnboardingFlow: View {
 
     private func answer(_ allowed: Bool) {
         AppAnalytics.shared.setConsent(allowed)
+        Bootstrap.linkAnalytics()
         Track.log(.consent, ["analytics": allowed])
         finish()
     }

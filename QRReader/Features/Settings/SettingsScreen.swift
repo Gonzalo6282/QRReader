@@ -32,6 +32,7 @@ struct SettingsScreen: View {
                     isOn: { AppAnalytics.shared.isEnabled },
                     setOn: { on in
                         AppAnalytics.shared.setConsent(on)
+                        Bootstrap.linkAnalytics()
                         Track.log(.consent, ["analytics": on])
                     }) : nil,
                 help: SettingsHelp(faqs: Self.faqs, reportTopics: Self.reportTopics, reportFooter: "We answer within 2 working days."),

@@ -22,5 +22,12 @@ enum Bootstrap {
         }
         PaywallService.shared.configure(superwallAPIKey: AppKey.infoPlist("SuperwallAPIKey", prefix: "pk_"))
         if !UserDefaults.standard.bool(forKey: SettingsKey.onboarded) { Track.log(.firstOpen) }
+        linkAnalytics()
+    }
+
+    /// Gives RevenueCat this install's Firebase ID for its Google Analytics link.
+    /// nil (cleared) when analytics is off, so nothing is linked without consent.
+    static func linkAnalytics() {
+        PurchaseManager.shared.setFirebaseAppInstanceID(AppAnalytics.shared.appInstanceID)
     }
 }
