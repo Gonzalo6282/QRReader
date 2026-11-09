@@ -1,0 +1,432 @@
+{
+  "devices" : [
+    {
+      "architecture" : "arm64",
+      "deviceId" : "FCC5F673-7BEC-4A7D-8F2A-4DC35E2668EC",
+      "deviceName" : "iPhone 17 Pro",
+      "modelName" : "iPhone 17 Pro",
+      "osBuildNumber" : "23F77",
+      "osVersion" : "26.5",
+      "platform" : "iOS Simulator"
+    }
+  ],
+  "testNodes" : [
+    {
+      "children" : [
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "25s",
+                  "durationInSeconds" : 25.37931001186371,
+                  "name" : "testBatchPaywallClosesAtOnce()",
+                  "nodeIdentifier" : "FlowTests/testBatchPaywallClosesAtOnce()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/FlowTests/testBatchPaywallClosesAtOnce",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "7s",
+                  "durationInSeconds" : 7.774312973022461,
+                  "name" : "testCameraDeniedOffersSettingsAndPhotos()",
+                  "nodeIdentifier" : "FlowTests/testCameraDeniedOffersSettingsAndPhotos()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/FlowTests/testCameraDeniedOffersSettingsAndPhotos",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "35s",
+                  "durationInSeconds" : 35.718942046165466,
+                  "name" : "testCreateSavePaywallClosesAtOnce()",
+                  "nodeIdentifier" : "FlowTests/testCreateSavePaywallClosesAtOnce()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/FlowTests/testCreateSavePaywallClosesAtOnce",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "20s",
+                  "durationInSeconds" : 20.648699045181274,
+                  "name" : "testFirstRunEndsOnASoftPaywallThenTheScanner()",
+                  "nodeIdentifier" : "FlowTests/testFirstRunEndsOnASoftPaywallThenTheScanner()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/FlowTests/testFirstRunEndsOnASoftPaywallThenTheScanner",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "15s",
+                  "durationInSeconds" : 15.351150035858154,
+                  "name" : "testSettingsUpgradeIsASoftPaywall()",
+                  "nodeIdentifier" : "FlowTests/testSettingsUpgradeIsASoftPaywall()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/FlowTests/testSettingsUpgradeIsASoftPaywall",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "FlowTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/FlowTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "9s",
+                  "durationInSeconds" : 9.443886041641235,
+                  "name" : "testBatchChipShowsThePaywallForFreeUsers()",
+                  "nodeIdentifier" : "LaunchTests/testBatchChipShowsThePaywallForFreeUsers()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/LaunchTests/testBatchChipShowsThePaywallForFreeUsers",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "23s",
+                  "durationInSeconds" : 23.629089951515198,
+                  "name" : "testCreateShowsALivePreview()",
+                  "nodeIdentifier" : "LaunchTests/testCreateShowsALivePreview()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/LaunchTests/testCreateShowsALivePreview",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "59s",
+                  "durationInSeconds" : 59.23536002635956,
+                  "name" : "testLaunchShowsScannerAndTabs()",
+                  "nodeIdentifier" : "LaunchTests/testLaunchShowsScannerAndTabs()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/LaunchTests/testLaunchShowsScannerAndTabs",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "LaunchTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/LaunchTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - Screenshots run only in their own workflow",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "0.21s",
+                  "durationInSeconds" : 0.2076120376586914,
+                  "name" : "test1Scan()",
+                  "nodeIdentifier" : "ScreenshotTests/test1Scan()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test1Scan",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                },
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - Screenshots run only in their own workflow",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "0.63s",
+                  "durationInSeconds" : 0.6322689056396484,
+                  "name" : "test2SafeLink()",
+                  "nodeIdentifier" : "ScreenshotTests/test2SafeLink()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test2SafeLink",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                },
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - Screenshots run only in their own workflow",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "0.21s",
+                  "durationInSeconds" : 0.20726299285888672,
+                  "name" : "test3WiFi()",
+                  "nodeIdentifier" : "ScreenshotTests/test3WiFi()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test3WiFi",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                },
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - Screenshots run only in their own workflow",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "0.1s",
+                  "durationInSeconds" : 0.10355091094970703,
+                  "name" : "test4Create()",
+                  "nodeIdentifier" : "ScreenshotTests/test4Create()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test4Create",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                },
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - Screenshots run only in their own workflow",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "0.32s",
+                  "durationInSeconds" : 0.31710493564605713,
+                  "name" : "test5History()",
+                  "nodeIdentifier" : "ScreenshotTests/test5History()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test5History",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                },
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - Screenshots run only in their own workflow",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "0.1s",
+                  "durationInSeconds" : 0.10366702079772949,
+                  "name" : "test6CreateTypes()",
+                  "nodeIdentifier" : "ScreenshotTests/test6CreateTypes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test6CreateTypes",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                }
+              ],
+              "name" : "ScreenshotTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests",
+              "nodeType" : "Test Suite",
+              "result" : "Skipped"
+            }
+          ],
+          "name" : "QRReaderUITests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests",
+          "nodeType" : "UI test bundle",
+          "result" : "Passed"
+        },
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "0.029s",
+                  "durationInSeconds" : 0.02887701988220215,
+                  "name" : "scanKitIsLinked()",
+                  "nodeIdentifier" : "AppSmokeTests/scanKitIsLinked()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/AppSmokeTests/scanKitIsLinked()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.85s",
+                  "durationInSeconds" : 0.8497679233551025,
+                  "name" : "sliceLibraryIsLinked()",
+                  "nodeIdentifier" : "AppSmokeTests/sliceLibraryIsLinked()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/AppSmokeTests/sliceLibraryIsLinked()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "AppSmokeTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/AppSmokeTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.37s",
+                  "durationInSeconds" : 0.37372303009033203,
+                  "name" : "csvHasTheMockupColumns()",
+                  "nodeIdentifier" : "BatchExportTests/csvHasTheMockupColumns()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/BatchExportTests/csvHasTheMockupColumns()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.37s",
+                  "durationInSeconds" : 0.37381696701049805,
+                  "name" : "paywallContextLines()",
+                  "nodeIdentifier" : "BatchExportTests/paywallContextLines()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/BatchExportTests/paywallContextLines()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "BatchExportTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/BatchExportTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.37s",
+                  "durationInSeconds" : 0.3735988140106201,
+                  "name" : "differentCodesAndScansStaySeparate()",
+                  "nodeIdentifier" : "CreatedCodesTests/differentCodesAndScansStaySeparate()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/CreatedCodesTests/differentCodesAndScansStaySeparate()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.37s",
+                  "durationInSeconds" : 0.3735220432281494,
+                  "name" : "savingAndSharingTheSameCodeKeepsOneEntry()",
+                  "nodeIdentifier" : "CreatedCodesTests/savingAndSharingTheSameCodeKeepsOneEntry()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/CreatedCodesTests/savingAndSharingTheSameCodeKeepsOneEntry()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "CreatedCodesTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/CreatedCodesTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.03s",
+                  "durationInSeconds" : 0.02954387664794922,
+                  "name" : "eventTimeFormatting()",
+                  "nodeIdentifier" : "ResultPresentationTests/eventTimeFormatting()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/eventTimeFormatting()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.028s",
+                  "durationInSeconds" : 0.0283510684967041,
+                  "name" : "safeLink()",
+                  "nodeIdentifier" : "ResultPresentationTests/safeLink()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/safeLink()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.028s",
+                  "durationInSeconds" : 0.02825307846069336,
+                  "name" : "everyActionHasWords()",
+                  "nodeIdentifier" : "ResultPresentationTests/everyActionHasWords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/everyActionHasWords()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.028s",
+                  "durationInSeconds" : 0.028244972229003906,
+                  "name" : "contact()",
+                  "nodeIdentifier" : "ResultPresentationTests/contact()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/contact()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.026s",
+                  "durationInSeconds" : 0.026412010192871094,
+                  "name" : "productAndOtherBarcodes()",
+                  "nodeIdentifier" : "ResultPresentationTests/productAndOtherBarcodes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/productAndOtherBarcodes()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.36s",
+                  "durationInSeconds" : 0.3646430969238281,
+                  "name" : "suspiciousLink()",
+                  "nodeIdentifier" : "ResultPresentationTests/suspiciousLink()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/suspiciousLink()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.015s",
+                  "durationInSeconds" : 0.01501011848449707,
+                  "name" : "wifi()",
+                  "nodeIdentifier" : "ResultPresentationTests/wifi()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/wifi()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.015s",
+                  "durationInSeconds" : 0.01516413688659668,
+                  "name" : "otherTypes()",
+                  "nodeIdentifier" : "ResultPresentationTests/otherTypes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/otherTypes()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.36s",
+                  "durationInSeconds" : 0.35871386528015137,
+                  "name" : "ago()",
+                  "nodeIdentifier" : "ResultPresentationTests/ago()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests/ago()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "ResultPresentationTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/ResultPresentationTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.65s",
+                  "durationInSeconds" : 0.6507058143615723,
+                  "name" : "neverMoreThanThreeAsks()",
+                  "nodeIdentifier" : "RatingTests/neverMoreThanThreeAsks()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/RatingTests/neverMoreThanThreeAsks()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.65s",
+                  "durationInSeconds" : 0.650568962097168,
+                  "name" : "shareMessageNamesTheAppAndLinks()",
+                  "nodeIdentifier" : "RatingTests/shareMessageNamesTheAppAndLinks()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/RatingTests/shareMessageNamesTheAppAndLinks()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.65s",
+                  "durationInSeconds" : 0.6506681442260742,
+                  "name" : "asksOnTheFirstHappyMomentThenWaitsForTheNextVersion()",
+                  "nodeIdentifier" : "RatingTests/asksOnTheFirstHappyMomentThenWaitsForTheNextVersion()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/RatingTests/asksOnTheFirstHappyMomentThenWaitsForTheNextVersion()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "RatingTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests/RatingTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "QRReaderTests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderTests",
+          "nodeType" : "Unit test bundle",
+          "result" : "Passed"
+        }
+      ],
+      "name" : "QRReader",
+      "nodeType" : "Test Plan",
+      "result" : "Passed"
+    }
+  ],
+  "testPlanConfigurations" : [
+    {
+      "configurationId" : "1",
+      "configurationName" : "Test Scheme Action"
+    }
+  ]
+}
