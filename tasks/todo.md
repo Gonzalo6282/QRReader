@@ -57,10 +57,10 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions.
 - [x] ✅ You: keys in Secrets.xcconfig, sandbox purchase unlocks actions, restore (8 Nov)
 
 ## M7 Analytics + release
-- [ ] T7.1 SliceAnalytics + consent + events
+- [x] T7.1 SliceAnalytics + consent + events (DebugView checked on iPhone, 9 Nov)
 - [x] T7.2 Remote Config, Crashlytics dSYM, rating prompt
-- [ ] T7.3 UI tests (first run, paywall close buttons, camera denied) + screenshot capture
-- [ ] T7.4 Size check, Release build (iPad-in-iPhone-mode: passed on iPad Pro 13" Simulator, 9 Nov)
+- [x] T7.3 UI tests (first run, paywall close buttons, camera denied) + screenshot capture
+- [x] T7.4 Size check (≈14 MB zipped), Release build, iPad-in-iPhone-mode (iPad Pro 13" Simulator)
 - [ ] ✅ You: fresh install + full bug checklist on device
 
 ## Store listing (done 8–9 Nov)
