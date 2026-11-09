@@ -60,6 +60,12 @@ final class ScreenshotTests: XCTestCase {
         capture("4-create")
     }
 
+    @MainActor func test6CreateTypes() {
+        let app = launch("create")
+        XCTAssertTrue(app.buttons["create-link"].waitForExistence(timeout: 15))
+        capture("6-types")
+    }
+
     @MainActor func test5History() {
         let app = launch("history")
         XCTAssertTrue(app.tabBars.buttons["History"].waitForExistence(timeout: 15))
