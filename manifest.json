@@ -1,0 +1,92 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "1D202A62-75FA-4910-BFA1-14DDB30B0518",
+        "deviceName" : "iPad Pro 13-inch (M5)",
+        "exportedFileName" : "D567ED6D-7B80-49B4-A399-F433BF3EC40D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "1-scan_0_77918CB1-DEDD-4482-BBFD-A0F9F00CD67F.png",
+        "timestamp" : 1794251451.157
+      }
+    ],
+    "testIdentifier" : "ScreenshotTests/test1Scan()",
+    "testIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test1Scan"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "1D202A62-75FA-4910-BFA1-14DDB30B0518",
+        "deviceName" : "iPad Pro 13-inch (M5)",
+        "exportedFileName" : "117884FB-5714-4F42-A3C2-AAB6B389D35F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "2-safe-link_0_5C85D63A-C6EC-438E-8F88-C9D1D5C37638.png",
+        "timestamp" : 1794251487.553
+      }
+    ],
+    "testIdentifier" : "ScreenshotTests/test2SafeLink()",
+    "testIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test2SafeLink"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "1D202A62-75FA-4910-BFA1-14DDB30B0518",
+        "deviceName" : "iPad Pro 13-inch (M5)",
+        "exportedFileName" : "2A466621-4BB6-4BEC-8534-C98CC8244413.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "3-wifi_0_5B02A2D9-EBDD-47B9-B02D-FD1A90153760.png",
+        "timestamp" : 1794251502.697
+      }
+    ],
+    "testIdentifier" : "ScreenshotTests/test3WiFi()",
+    "testIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test3WiFi"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "1D202A62-75FA-4910-BFA1-14DDB30B0518",
+        "deviceName" : "iPad Pro 13-inch (M5)",
+        "exportedFileName" : "C443F309-FB5C-42BA-9051-471E8A5D98B9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "4-create_0_71130976-8116-498A-9FBA-B3565E081A3C.png",
+        "timestamp" : 1794251538.703
+      }
+    ],
+    "testIdentifier" : "ScreenshotTests/test4Create()",
+    "testIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test4Create"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "1D202A62-75FA-4910-BFA1-14DDB30B0518",
+        "deviceName" : "iPad Pro 13-inch (M5)",
+        "exportedFileName" : "B312DCB6-20ED-4EF9-B762-37A4474AD946.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "5-history_0_DB4C9A7A-06D5-4165-9495-C33921C7BC4D.png",
+        "timestamp" : 1794251557.077
+      }
+    ],
+    "testIdentifier" : "ScreenshotTests/test5History()",
+    "testIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test5History"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "1D202A62-75FA-4910-BFA1-14DDB30B0518",
+        "deviceName" : "iPad Pro 13-inch (M5)",
+        "exportedFileName" : "9709BF50-D6CF-48D7-87B0-009DC4F2B455.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "6-types_0_87F43E71-79CA-4406-95BF-EF482443866E.png",
+        "timestamp" : 1794251569.899
+      }
+    ],
+    "testIdentifier" : "ScreenshotTests/test6CreateTypes()",
+    "testIdentifierURL" : "test://com.apple.xcode/QRReader/QRReaderUITests/ScreenshotTests/test6CreateTypes"
+  }
+]
