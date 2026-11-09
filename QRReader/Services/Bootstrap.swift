@@ -21,7 +21,7 @@ enum Bootstrap {
             Track.log(.paywallView, ["placement": placement, "paywall_id": paywallID])
         }
         PaywallService.shared.configure(superwallAPIKey: AppKey.infoPlist("SuperwallAPIKey", prefix: "pk_"))
-        if !UserDefaults.standard.bool(forKey: SettingsKey.onboarded) { Track.log(.firstOpen) }
+        // first_open is logged by Firebase itself (the name is reserved, so the app doesn't log it).
         linkAnalytics()
     }
 

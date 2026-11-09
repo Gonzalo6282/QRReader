@@ -23,7 +23,6 @@ extension PaywallService {
 
 /// Firebase events (Build Doc "Tracking" + mockup extras). Trial and purchase events come from RevenueCat.
 enum Event: String, AnalyticsEventType {
-    case firstOpen = "first_open"
     case onboardingComplete = "onboarding_complete"
     case cameraPermission = "camera_permission"
     case scanSuccess = "scan_success"
