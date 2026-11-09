@@ -64,21 +64,20 @@ struct ScreenshotScene: View {
                                startRadius: 10, endRadius: geo.size.width * 0.9)
                 RoundedRectangle(cornerRadius: 14)
                     .fill(Color(hex: "#f6f1e7"))
-                    .frame(width: 236, height: 290)
+                    .frame(width: 222, height: 252)
                     .overlay(alignment: .bottom) {
                         VStack(spacing: 4) {
-                            Text("LA CANTINE").font(.system(size: 15, weight: .heavy, design: .serif)).tracking(2)
-                            Text("Scan for our menu").font(.system(size: 11, weight: .medium)).opacity(0.7)
+                            Text("LA CANTINE").font(.system(size: 13, weight: .heavy, design: .serif)).tracking(2)
                         }
                         .foregroundStyle(Color(hex: "#2b2118"))
-                        .padding(.bottom, 14)
+                        .padding(.bottom, 10)
                     }
                     .shadow(color: .black.opacity(0.55), radius: 24, y: 14)
                     .rotationEffect(.degrees(-4))
-                    .position(x: centre.x, y: centre.y + 30)
+                    .position(x: centre.x, y: centre.y + 14)
                 if let image = QRRenderer.image(for: ScreenshotMode.menuLink, colour: .black, logo: false, side: 600) {
                     Image(uiImage: image).interpolation(.none).resizable()
-                        .frame(width: 168, height: 168)
+                        .frame(width: 162, height: 162)
                         .rotationEffect(.degrees(-4))
                         .position(centre)
                 }
