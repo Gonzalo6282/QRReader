@@ -112,9 +112,23 @@ jobs:
             echo "Compiled OK with $(xcodebuild -version | head -1)"
             # The App Store build must compile too (catches debug-only code).
             xcodebuild build -project QRReader.xcodeproj -scheme QRReader -configuration Release \
-              -destination 'generic/platform=iOS' -clonedSourcePackagesDirPath .spm CODE_SIGNING_ALLOWED=NO > build-release.log 2>&1 \
+              -destination 'generic/platform=iOS' -clonedSourcePackagesDirPath .spm -derivedDataPath build/rel \
+              CODE_SIGNING_ALLOWED=NO > build-release.log 2>&1 \
               || { grep -E "error:" build-release.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=release build::$l"; done; tail -30 build-release.log; exit 1; }
             echo "Release configuration compiled OK"
+            # Size check (target: download under about 30 MB). The zip of the .app is close to the
+            # App Store download size; the installed size is the unzipped .app.
+            APP=$(find build/rel/Build/Products/Release-iphoneos -maxdepth 1 -name "*.app" | head -1)
+            if [ -n "$APP" ]; then
+              INSTALLED=$(du -sm "$APP" | cut -f1)
+              BIN=$(du -m "$APP/$(basename "$APP" .app)" | cut -f1)
+              (cd "$(dirname "$APP")" && zip -qr -9 /tmp/app.zip "$(basename "$APP")")
+              ZIPPED=$(du -m /tmp/app.zip | cut -f1)
+              echo "::notice title=App size::installed ${INSTALLED} MB, binary ${BIN} MB, zipped ${ZIPPED} MB (estimate of the download)"
+              { echo "### App size (Release, arm64)"; echo "| Installed | Binary | Zipped (≈ download) |"; echo "|---|---|---|"; echo "| ${INSTALLED} MB | ${BIN} MB | ${ZIPPED} MB |"; } >> "$GITHUB_STEP_SUMMARY"
+              du -sh "$APP"/* | sort -h | tail -8
+              [ "$ZIPPED" -le 30 ] || echo "::warning title=App size::zipped size ${ZIPPED} MB is over the 30 MB target"
+            fi
           else
             grep -E "error:" build-mac.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=compile 26.1::$l"; done
             tail -40 build-mac.log; exit 1
