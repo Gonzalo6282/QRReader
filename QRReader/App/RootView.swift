@@ -6,6 +6,7 @@ import SwiftUI
 /// The four tabs from the mockup, the result card, the toast and the native paywall.
 struct RootView: View {
     @Environment(AppModel.self) private var app
+    @Environment(\.modelContext) private var context
     @AppStorage(SettingsKey.onboarded) private var onboarded = false
 
     var body: some View {
@@ -60,6 +61,7 @@ struct RootView: View {
                 .paywallHost()
         }
         .paywallHost(active: app.result == nil && !app.showsBatchList)
+        .task { ScreenshotMode.prepare(app: app, context: context) }
     }
 
     /// History is free for the first 3 scans, then `history_open`; closing the paywall keeps the current tab.

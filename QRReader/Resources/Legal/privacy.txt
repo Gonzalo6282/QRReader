@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: 2 November 2026
+Last updated: 8 November 2026
 
 ## Introduction
 This Privacy Policy explains how Slice of Life Ltd ("we", "us" or "our") handles information relating to an identified or identifiable individual ("Personal Information") when you use Qodi: QR Code Reader & Barcode (the "App").
@@ -28,7 +28,7 @@ When you act on a scan (for example open a link, join a Wi-Fi network, add a con
 Subscriptions are bought through Apple. We do not receive your payment details. To know whether you have Pro, the App uses RevenueCat, which receives an anonymous app user identifier, your purchase history for this App and your App Store country. Paywalls may be shown through Superwall, which receives the same anonymous identifier and which paywall was shown. If you arrived from an Apple Search Ads campaign, an attribution token is passed to RevenueCat so we can measure our ads; it does not identify you.
 
 ### Analytics and crash reports
-The App uses Google Firebase Analytics to understand how features are used (for example that a code was scanned and its type, or that a paywall was shown), and Firebase Crashlytics to receive crash reports. These events never include what a code contains, your photos, your contacts or your history. Each event carries the app version and your country. In the UK, the EEA and Switzerland, analytics stay off until you tap Allow, and you can change your choice in Settings. Elsewhere, analytics are on until you turn them off. Crash reports help us keep the App working and contain technical information about the crash and your device model. Firebase Remote Config lets us change some settings of the App, such as which paywall is shown, without an update.
+The App uses Google Firebase Analytics to understand how features are used (for example that a code was scanned and its type, or that a paywall was shown), and Firebase Crashlytics to receive crash reports. These events never include what a code contains, your photos, your contacts or your history. Each event carries the app version and your country. When analytics are on, RevenueCat also sends purchase events (such as a trial starting, a renewal or a cancellation) to Firebase Analytics, using the same anonymous Firebase identifier, so we can see which features lead to a subscription. In the UK, the EEA and Switzerland, analytics stay off until you tap Allow, and you can change your choice in Settings. Elsewhere, analytics are on until you turn them off. Crash reports help us keep the App working and contain technical information about the crash and your device model. Firebase Remote Config lets us change some settings of the App, such as which paywall is shown, without an update.
 
 ### Support
 If you email us, we receive your email address and what you write, and use them only to answer you.

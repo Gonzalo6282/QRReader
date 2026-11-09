@@ -1,0 +1,72 @@
+name: Screenshots
+
+# Store screenshots from the Simulator (ScreenshotTests). Run by hand; the PNGs are
+# pushed to the store-screenshots branch so they can be fetched without Actions artifacts.
+on:
+  workflow_dispatch:
+    inputs:
+      device:
+        description: Simulator
+        default: iPhone 17 Pro Max
+
+permissions:
+  contents: write
+
+jobs:
+  shots:
+    runs-on: macos-26
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .spm
+          key: spm-${{ hashFiles('QRReader.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'QRReader.xcodeproj/project.pbxproj') }}
+          restore-keys: spm-
+
+      - name: Pick Xcode and simulator
+        run: |
+          LATEST=$(ls -d /Applications/Xcode_26*.app | grep -v -i beta | sort -V | tail -1)
+          echo "DEVELOPER_DIR=$LATEST/Contents/Developer" >> "$GITHUB_ENV"
+          export DEVELOPER_DIR="$LATEST/Contents/Developer"
+          NAME="${{ github.event.inputs.device }}"
+          ID=$(xcrun simctl list devices available -j | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)['devices']
+          ids=[x['udid'] for k,v in d.items() if 'iOS' in k for x in v if x['name']=='$NAME']
+          print(ids[-1] if ids else '')")
+          [ -z "$ID" ] && { echo "::error::$NAME not available"; xcrun simctl list devices available | grep iPhone; exit 1; }
+          echo "SIM=$ID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$ID" || true
+          xcrun simctl bootstatus "$ID" -b
+          xcrun simctl status_bar "$ID" override --time "9:41" --dataNetwork wifi --wifiMode active --wifiBars 3 \
+            --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
+          xcrun simctl ui "$ID" appearance light
+
+      - name: Take screenshots
+        run: |
+          mkdir -p build
+          TEST_RUNNER_SCREENSHOTS=1 xcodebuild test \
+            -project QRReader.xcodeproj -scheme QRReader \
+            -destination "id=$SIM" \
+            -clonedSourcePackagesDirPath .spm \
+            -only-testing:QRReaderUITests/ScreenshotTests \
+            -resultBundlePath build/shots.xcresult \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/shots.log | grep -E "error:|Test Case|\*\* TEST" || true
+          test -d build/shots.xcresult
+
+      - name: Publish screenshots
+        if: always()
+        run: |
+          OUT="${{ runner.temp }}/shots"; mkdir -p "$OUT"
+          xcrun xcresulttool export attachments --path build/shots.xcresult --output-path "$OUT" > /dev/null 2>&1 || true
+          cp build/shots.log "$OUT"/ || true
+          cd "$OUT"
+          ls -la
+          git init -q -b store-screenshots
+          git config user.name "CI"; git config user.email "ci@users.noreply.github.com"
+          echo "Screenshots from ${GITHUB_SHA} on ${{ github.event.inputs.device }}" > README.md
+          git add -A && git commit -q -m "Screenshots for ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" store-screenshots

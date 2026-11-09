@@ -65,7 +65,11 @@ struct ScannerScreen: View {
             let centre = CGPoint(x: geo.size.width / 2, y: geo.size.height * 0.41)
             let side: CGFloat = camera.locked ? 200 : 250
             ZStack {
-                CameraPreview(session: camera.scanner.session).ignoresSafeArea()
+                if ScreenshotMode.isOn {
+                    ScreenshotScene()
+                } else {
+                    CameraPreview(session: camera.scanner.session).ignoresSafeArea()
+                }
                 if flash {
                     RoundedRectangle(cornerRadius: 12).fill(QodiTheme.lime.opacity(0.16))
                         .frame(width: 180, height: 180).position(centre).transition(.opacity)

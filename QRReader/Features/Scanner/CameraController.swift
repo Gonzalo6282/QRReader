@@ -17,12 +17,18 @@ final class CameraController {
 
     init() {
         // UI tests can't answer the system prompt: they see the "camera off" screen.
-        permission = AppConfig.isUITesting ? .denied : AVCaptureDevice.authorizationStatus(for: .video)
+        // Store screenshots show a stand-in picture instead (ScreenshotMode).
+        permission = ScreenshotMode.isOn ? .authorized
+            : AppConfig.isUITesting ? .denied : AVCaptureDevice.authorizationStatus(for: .video)
     }
 
     var isDenied: Bool { permission == .denied || permission == .restricted }
 
     func appear() async {
+        if ScreenshotMode.isOn {
+            locked = ScreenshotMode.shot == "scan"
+            return
+        }
         if permission == .notDetermined {
             let granted = await AVCaptureDevice.requestAccess(for: .video)
             permission = granted ? .authorized : .denied
