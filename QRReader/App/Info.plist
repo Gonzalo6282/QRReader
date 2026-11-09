@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string>Qodi uses the camera to read QR codes and barcodes. The picture is checked on your iPhone and never saved or sent.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
