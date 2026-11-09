@@ -51,14 +51,21 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions.
 ## M6 Money + first run
 - [x] T6.1 SlicePurchases set-up, StoreKit config file, placements (keys still to add on the Mac)
 - [x] T6.2 Paywall content per placement
-- [ ] T6.2b SliceLibrary PR: weekly (trial) plan selected first
+- [ ] T6.2b SliceLibrary PR: weekly (trial) plan selected first (native paywall only; Superwall paywall already weekly first) → 1.1
 - [x] T6.3 Onboarding flow
 - [x] T6.4 Settings (StandardSettings + app sections, Pro card, support mail, legal text)
-- [ ] ✅ You: keys in Secrets.xcconfig, sandbox purchase unlocks actions, restore
+- [x] ✅ You: keys in Secrets.xcconfig, sandbox purchase unlocks actions, restore (8 Nov)
 
 ## M7 Analytics + release
 - [ ] T7.1 SliceAnalytics + consent + events
-- [ ] T7.2 Remote Config, Crashlytics dSYM, rating prompt
+- [x] T7.2 Remote Config, Crashlytics dSYM, rating prompt
 - [ ] T7.3 UI tests (first run, paywall close buttons, camera denied) + screenshot capture
-- [ ] T7.4 Size check, Release build, iPad-in-iPhone-mode check
+- [ ] T7.4 Size check, Release build (iPad-in-iPhone-mode: passed on iPad Pro 13" Simulator, 9 Nov)
 - [ ] ✅ You: fresh install + full bug checklist on device
+
+## Store listing (done 8–9 Nov)
+- [x] Legal pages: slice-of-life.uk/qr/privacy, /qr/terms, /qr/support
+- [x] Listing text US + UK, categories, age rating 4+, App Privacy published
+- [x] Screenshots (Screenshots workflow): 6 screens at 6.3", 6.9", 6.5"
+- [x] App Review notes + contact; ITSAppUsesNonExemptEncryption = NO
+- [ ] Archive, upload build, attach build + both subscriptions to 1.0, submit
